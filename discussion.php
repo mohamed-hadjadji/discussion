@@ -24,6 +24,32 @@
      </nav>
     </header>
     <section>
+ <?php
+session_start();
+date_default_timezone_set('europe/paris');
+if (isset($_POST['submit']))
+{
+	if(!empty($_POST['message']))
+	{
+      $connexion = mysqli_connect("localhost","root","","discussion");
+       if ( isset ($_POST['submit']))
+       {
+	    $requete3="SELECT * FROM `utilisateurs` WHERE login='".$_SESSION['login']."'";
+ 	    $query3 = mysqli_query( $connexion,$requete3);
+  	    $resultat3= mysqli_fetch_all($query3);
+
+  	    $requete2="INSERT INTO messages (message, id_utilisateur, date) VALUES ('".$_POST['message']."','".$resultat3[0][0]."','".date("Y-m-d H:i:s")."')";
+  	     $query2 = mysqli_query( $connexion,$requete2);
+       header('Location: discussion.php');
+  	    }
+
+	   }
+	else{
+		echo "le champ message est vide<br>";
+	}
+}
+
+?>
 <?php
 $connexion = mysqli_connect("localhost","root","","discussion");
 
@@ -53,32 +79,7 @@ while($row = mysqli_fetch_assoc($req))
 }
 ?>
 
-<?php
-session_start();
-date_default_timezone_set('europe/paris');
-if (isset($_POST['submit']))
-{
-	if(!empty($_POST['message']))
-	{
-      $connexion = mysqli_connect("localhost","root","","discussion");
-       if ( isset ($_POST['submit']))
-       {
-	    $requete3="SELECT * FROM `utilisateurs` WHERE login='".$_SESSION['login']."'";
- 	    $query3 = mysqli_query( $connexion,$requete3);
-  	    $resultat3= mysqli_fetch_all($query3);
 
-  	    $requete2="INSERT INTO messages (message, id_utilisateur, date) VALUES ('".$_POST['message']."','".$resultat3[0][0]."','".date("Y-m-d H:i:s")."')";
-  	     $query2 = mysqli_query( $connexion,$requete2);
-       
-  	    }
-
-	   }
-	else{
-		echo "le champ message est vide<br>";
-	}
-}
-
-?>
 
 </section>
 <article>
@@ -87,7 +88,7 @@ if (isset($_POST['submit']))
                if (isset($_SESSION['login'])==true){
                     ?>
                     <form method="POST" action="">
-                        <label>Laisser un commentaire:</label>
+                        <label>Envoyer un message:</label>
                         <br/><br/>
                         <textarea name="message" rows="6" maxlength="50" cols="50"></textarea><br/><br/>
 
