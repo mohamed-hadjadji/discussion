@@ -1,7 +1,7 @@
 <?php
 
 
-if(isset($_GET['login']) && isset($_GET['password']))
+if(isset($_POST['login']) && isset($_POST['password']))
 {
 
     $connexion = mysqli_connect ("localhost", "root", "", "discussion");
@@ -9,8 +9,8 @@ if(isset($_GET['login']) && isset($_GET['password']))
 
     // on applique les deux fonctions mysqli_real_escape_string et htmlspecialchars
     // pour éliminer toute attaque de type injection SQL et XSS
-    $login = mysqli_real_escape_string($connexion,htmlspecialchars($_GET['login']));
-    $password = mysqli_real_escape_string($connexion,htmlspecialchars($_GET['password']));
+    $login = mysqli_real_escape_string($connexion,htmlspecialchars($_POST['login']));
+    $password = mysqli_real_escape_string($connexion,htmlspecialchars($_POST['password']));
 
     if($login !== "" && $password !== "")
     {
@@ -23,7 +23,7 @@ if(isset($_GET['login']) && isset($_GET['password']))
         if($count!=0 &&$_SESSION['login'] !== "")
         {
             session_start();
-            $_SESSION['login'] = $_GET['login'];
+            $_SESSION['login'] = $_POST['login'];
             $user = $_SESSION['login'];
             echo "Bonjour $user, vous êtes connecté";
             header('Location: index.php');
@@ -71,7 +71,7 @@ if(isset($_GET['login']) && isset($_GET['password']))
           <h1>Connexion</h1>
 
 
-              <form action="" method="get">
+              <form action="" method="post">
               
 
                   <label><b>LOGIN</b></label>

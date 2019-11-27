@@ -71,12 +71,12 @@ session_start();
     <?php
      $connexion = mysqli_connect("localhost","root","","discussion");
 
-    if (isset($_GET['Modifier']))
+    if (isset($_POST['Modifier']))
     {
 
 
-    $login = $_GET['login'];
-    $passe = $_GET['mdp'];
+    $login = $_POST['login'];
+    $passe = $_POST['mdp'];
 
     $requete2 = "UPDATE utilisateurs SET login = '$login', password = '$passe' WHERE login = '".$_SESSION['login']."'";
        $query2=mysqli_query($connexion,$requete2);
