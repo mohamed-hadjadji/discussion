@@ -1,0 +1,96 @@
+.bodyd{
+	background: url("https://store-images.s-microsoft.com/image/apps.35697.64348089090308451.8e82fecc-34a6-434e-95fc-94cd09776a1e.0ca5bf53-9afd-49bf-bbc1-8835676c9073?mode=scale&q=90&h=1080&w=1920&background=%23FFFFFF")top left/100% 100%;
+}
+
+section{
+	background-color: rgba(0, 0, 0, 0.4);
+	margin-top: 60px;
+	margin-left: 180px;
+	margin-right: 180px;
+	border-style:solid;
+	padding: 20px;
+	height: 400px;
+	overflow-y: scroll;
+}
+.poster{
+	display:flex;
+	margin-bottom: 10px;
+	
+	
+}
+#user{
+border-style:solid;
+border-radius:50px; 
+height: 80px; 
+padding: 10px;
+background-color: #5C6F63;
+margin-right: 5px;
+opacity: 0.8;
+
+}
+#user p{
+	color: black;
+	font-size: 12px;
+	text-align: center;
+}
+#user h3{
+	color: black;
+	font-size: 16px;
+	text-align: center;
+}
+
+#messag{
+margin-top: 30px;
+border-radius:20px; 
+padding: 10px; 
+margin-bottom: 20px;
+background-color: rgba(95, 111, 114, 0.7);
+
+}
+article{
+	
+margin-top: 0%;
+margin-left: 180px;
+margin-right: 180px;
+}
+
+#comment{
+	border-style:solid;
+	text-align: center;
+	font-family: 'Géorgie';
+	color: white;
+	font-size: 22px;
+	padding-top: 12px;
+	background-color: #5C6F63;
+	opacity: 0.8;	
+}
+
+#comment label{
+	
+}
+textarea{
+	background-color: #5F6F72;
+	font-family: 'Géorgie';
+	font-size: 15px;
+	color: white;
+	border-radius: 15px; 
+
+}
+#comment input[type=submit] {
+    background-color: #3E5173;
+    color: white;
+    padding: 14px 20px;
+    font-family: 'Géorgie';
+    font-size: 20px;
+    width: 300px;
+    border: none;
+    border-radius: 10px; 
+    cursor: pointer;
+ 
+}
+#comment input[type=submit]:hover {
+    background-color: #D0DADB;
+    color: #5C6F63;
+    border: 1px solid #53af57;
+}
+

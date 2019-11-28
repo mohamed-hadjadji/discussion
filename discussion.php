@@ -1,11 +1,11 @@
 <html>
 <head>
 	<meta sharset="utf-8">
-	<link rel="stylesheet" href= "">
+	<link rel="stylesheet" href= "index.css">
 	 <title>Salon de Discussion</title>
 
 </head>
-  <body>
+  <body class="bodyd">
   	<header>
 
        <style type="text/css">
@@ -90,9 +90,9 @@ while($row = mysqli_fetch_assoc($req))
                     <form method="POST" action="">
                         <label>Envoyer un message:</label>
                         <br/><br/>
-                        <textarea name="message" rows="6" maxlength="50" cols="50"></textarea><br/><br/>
+                        <textarea name="message" rows="3" maxlength="50" cols="120"></textarea><br/><br/>
 
-                        <input type="submit" name="submit" value ="Poster">
+                        <input type="submit" name="submit" value ="Envoyer">
 
                     </form>
 
