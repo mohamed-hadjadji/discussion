@@ -42,7 +42,7 @@ if(isset($_POST['login']) && isset($_POST['password']))
 <html>
 <head>
     <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="">
+        <link rel="stylesheet" type="text/css" href="index.css">
     <title>Connexion</title>
 </head>
 <body>
@@ -67,7 +67,7 @@ if(isset($_POST['login']) && isset($_POST['password']))
                         echo "<p style='color:#6E0C06'><b>Utilisateur ou mot de passe incorrect</b></p>";
                 }
                 ?>
-        <div id="formconnexion">
+        <div id="formc">
           <h1>Connexion</h1>
 
 

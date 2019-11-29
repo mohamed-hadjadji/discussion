@@ -1,3 +1,40 @@
+#formc{
+    width:400px;
+    margin:0 auto;
+    margin-top:10%;
+}
+
+#formc form {
+    width:100%;
+    padding: 30px;
+    border: 1px solid #f1f1f1;
+    background: rgba(93, 111, 100, 0.7);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 15px; 
+}
+#formc h1{
+	font-family: '';
+	font-size: 26px;
+	text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+#formc input[type=text], #formc input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: rgba(95, 111, 114, 0.5);
+    font-size: 15px;
+	color: white;
+	border-radius: 15px; 
+}
+
+/*Discussion*/
 .bodyd{
 	background: url("https://store-images.s-microsoft.com/image/apps.35697.64348089090308451.8e82fecc-34a6-434e-95fc-94cd09776a1e.0ca5bf53-9afd-49bf-bbc1-8835676c9073?mode=scale&q=90&h=1080&w=1920&background=%23FFFFFF")top left/100% 100%;
 }
@@ -76,7 +113,7 @@ textarea{
 	border-radius: 15px; 
 
 }
-#comment input[type=submit] {
+input[type=submit] {
     background-color: #3E5173;
     color: white;
     padding: 14px 20px;
@@ -86,11 +123,32 @@ textarea{
     border: none;
     border-radius: 10px; 
     cursor: pointer;
+    margin: 20px;
+    margin-left: 45px;
  
 }
-#comment input[type=submit]:hover {
+input[type=submit]:hover {
     background-color: #D0DADB;
     color: #5C6F63;
     border: 1px solid #53af57;
 }
+#vide{
+	color: red;
+	position: absolute;
 
+}
+
+.bubble{
+	background:#5F6F72; 
+	color:#fff;
+	padding:7px 15px; 
+	border-radius:3px; 
+	
+}
+
+.bubble::after{
+content:""; 
+border-left:20px solid transparent;
+border-right:20px solid transparent;
+border-top: 20px solid #139ee0;
+}

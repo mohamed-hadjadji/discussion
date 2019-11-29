@@ -2,7 +2,7 @@
     <head>
         <title>Modifier Profil</title>
         <meta sharset="utf-8">
-        <link rel="stylesheet" href= "">
+        <link rel="stylesheet" href= "index.css">
         
     </head>
     <body class="bgprofil">
@@ -26,7 +26,7 @@
         <nav class="nav2">
 
             <a href="profil.php">Modification</a>
-            <a href="commentaire.php">Discussion</a>
+            <a href="discussion.php">Discussion</a>
             <a href="index.php?deconnexion=true">Déconnexion</a>
 
         </nav>
@@ -34,7 +34,7 @@
 
 
 
-                <div id="profilform">
+                <div id="formc">
                     <h1>Modifiez votre profil</h1><br>
 
                     <form method="post" action="index.php">

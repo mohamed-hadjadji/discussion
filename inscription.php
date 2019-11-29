@@ -38,7 +38,7 @@ if (isset($_POST['connexion']))
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="">
+    <link rel="stylesheet" type="text/css" href="index.css">
     <title>Inscription</title>
 </head>
 <body>
@@ -56,7 +56,7 @@ if (isset($_POST['connexion']))
 
             </nav>
     </header>
-    <div id="forminscription" >
+    <div id="formc" >
         <h1>Inscrivez vous pour accéder au salon de discussion</h1>
         <form class="form" method="POST" action=""> 
         
