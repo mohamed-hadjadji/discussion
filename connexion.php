@@ -68,10 +68,9 @@ if(isset($_POST['login']) && isset($_POST['password']))
                 }
                 ?>
         <div id="formc">
-          <h1>Connexion</h1>
-
-
+          
               <form action="" method="post">
+                <h1>Connexion</h1>
               
 
                   <label><b>LOGIN</b></label>

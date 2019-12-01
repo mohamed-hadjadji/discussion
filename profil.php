@@ -35,10 +35,10 @@
 
 
                 <div id="formc">
-                    <h1>Modifiez votre profil</h1><br>
-
+                    
                     <form method="post" action="index.php">
 
+                     <h1>Modifiez votre profil</h1><br>
 
                         <label>Nouveaux login:</label>
                         <input type="text" value="<?php echo $data['login']?>" placeholder="Nouvel identifiant" name="login"></input><br><br/>

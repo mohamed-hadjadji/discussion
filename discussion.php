@@ -71,7 +71,7 @@ while($row = mysqli_fetch_assoc($req))
 		 
 	    </div>
 	    <div id="messag">
-	    	<div class="bubble"
+	    	<div class="bubble">
 		 
 		   <p><?php echo $row['message']?></p>
 		   </div>

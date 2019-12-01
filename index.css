@@ -1,10 +1,18 @@
+.bodyi{
+	background:url("https://www.geekster.be/wp-content/uploads/2019/07/Fate-of-Atlantis-cover.jpeg")top left/100% 100%;
+}
+
+
 #formc{
     width:400px;
     margin:0 auto;
-    margin-top:10%;
+    margin-top:5%;
 }
 
 #formc form {
+	font-family: 'Géorgie';
+	font-size: 20px;
+	color: white;
     width:100%;
     padding: 30px;
     border: 1px solid #f1f1f1;
@@ -13,8 +21,7 @@
     border-radius: 15px; 
 }
 #formc h1{
-	font-family: '';
-	font-size: 26px;
+
 	text-align: center;
     width: 100%;
     margin: 0 auto;
@@ -32,6 +39,25 @@
     font-size: 15px;
 	color: white;
 	border-radius: 15px; 
+}
+input[type=submit] {
+    background-color: #3E5173;
+    color: white;
+    padding: 14px 20px;
+    font-family: 'Géorgie';
+    font-size: 20px;
+    width: 300px;
+    border: none;
+    border-radius: 10px; 
+    cursor: pointer;
+    margin: 20px;
+    margin-left: 45px;
+ 
+}
+input[type=submit]:hover {
+    background-color: #D0DADB;
+    color: #5C6F63;
+    border: 1px solid #53af57;
 }
 
 /*Discussion*/
@@ -81,8 +107,15 @@ margin-top: 30px;
 border-radius:20px; 
 padding: 10px; 
 margin-bottom: 20px;
-background-color: rgba(95, 111, 114, 0.7);
+background-color: rgba(95, 111, 114, 0.6);
 
+}
+.bubble{
+	background: #5F6F72; 
+	color:#fff;
+	padding:7px 15px; 
+	border-radius:20px; 
+	
 }
 article{
 	
@@ -113,42 +146,16 @@ textarea{
 	border-radius: 15px; 
 
 }
-input[type=submit] {
-    background-color: #3E5173;
-    color: white;
-    padding: 14px 20px;
-    font-family: 'Géorgie';
-    font-size: 20px;
-    width: 300px;
-    border: none;
-    border-radius: 10px; 
-    cursor: pointer;
-    margin: 20px;
-    margin-left: 45px;
- 
-}
-input[type=submit]:hover {
-    background-color: #D0DADB;
-    color: #5C6F63;
-    border: 1px solid #53af57;
-}
+
 #vide{
 	color: red;
 	position: absolute;
+	margin-left: 30%;
+    margin-top: 0%;
+    font-size: 19px;
 
 }
 
-.bubble{
-	background:#5F6F72; 
-	color:#fff;
-	padding:7px 15px; 
-	border-radius:3px; 
-	
-}
 
-.bubble::after{
-content:""; 
-border-left:20px solid transparent;
-border-right:20px solid transparent;
-border-top: 20px solid #139ee0;
-}
+
+
