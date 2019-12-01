@@ -45,7 +45,7 @@ if (isset($_POST['submit']))
 
 	   }
 	else{
-		echo "le champ message est vide<br>";
+		echo "<p id=\"vide\">le champ message est vide</p><br>";
 	}
 }
 
@@ -71,8 +71,10 @@ while($row = mysqli_fetch_assoc($req))
 		 
 	    </div>
 	    <div id="messag">
+	    	<div class="bubble">
 		 
 		   <p><?php echo $row['message']?></p>
+		   </div>
 	   </div>
 	</div>
 <?php    

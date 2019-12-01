@@ -1,5 +1,13 @@
 <?php
-
+    session_start();
+    if (isset($_SESSION['login']) && ($_SESSION['login'] == true))
+    {
+    include 'barnavco.php';
+}
+    else
+    {
+        include 'barnav.php';
+    }
 
 if(isset($_POST['login']) && isset($_POST['password']))
 {
@@ -22,7 +30,7 @@ if(isset($_POST['login']) && isset($_POST['password']))
 
         if($count!=0 &&$_SESSION['login'] !== "")
         {
-            session_start();
+            
             $_SESSION['login'] = $_POST['login'];
             $user = $_SESSION['login'];
             echo "Bonjour $user, vous êtes connecté";
@@ -42,24 +50,11 @@ if(isset($_POST['login']) && isset($_POST['password']))
 <html>
 <head>
     <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="">
+        <link rel="stylesheet" type="text/css" href="index.css">
     <title>Connexion</title>
 </head>
-<body>
-    <header>
-          <style type="text/css">
-        a:link
-        {
-        text-decoration:none;
-        }
-        </style>
-            <nav class="nav2">
+<body id="bodyco">
 
-                <a href="connexion.php"><h3>Connexion</h3></a>
-                <a href="inscription.php"><h3>Inscription</h3></a>
-
-            </nav>
-    </header>
     <?php
                 if(isset($_GET['erreur'])){
                     $err = $_GET['erreur'];
@@ -67,7 +62,7 @@ if(isset($_POST['login']) && isset($_POST['password']))
                         echo "<p style='color:#6E0C06'><b>Utilisateur ou mot de passe incorrect</b></p>";
                 }
                 ?>
-        <div id="formconnexion">
+        <div id="formc">
           <h1>Connexion</h1>
 
 
@@ -83,7 +78,11 @@ if(isset($_POST['login']) && isset($_POST['password']))
                   <input type="submit" id='submit' value='LOGIN' >
                 </form>
         </div>
-
+        <img id="stats" src="stats.png">
+        <img id="lance" src="lance.png">
+        <img id="arc" src="arc.png">
+        <img id="epee" src="epee.png">
+        <img id="cheval" src="cheval.png">
     </body>
 </html>
 

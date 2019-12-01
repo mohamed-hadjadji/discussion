@@ -1,0 +1,45 @@
+#bodyco{
+
+	background-image: url(https://media.giphy.com/media/EPZJPgzNT92hi/giphy.gif);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+#formconnexion{
+
+    position: absolute;
+    margin-top: 17%;
+    margin-left: 5%;
+    border: solid #5cd66c;
+}
+
+#pco{
+
+	color: #ffb89e;
+    background-color: #00bcd414;
+    border: solid 1px red;
+    position: absolute;
+    margin-left: 61%;
+    margin-top: 19%;
+    font-size: 30px;
+    text-shadow: 2px 2px black;
+}
+
+#stats{
+
+position: absolute;
+    height: 11%;
+    width: 74%;
+    margin-top: 39%;
+    margin-left: 11%;
+}
+
+#lance{
+    position: absolute;
+    height: 8%;
+    width: 5%;
+    margin-top: 1%;
+    margin-left: 1%;
+}
+}

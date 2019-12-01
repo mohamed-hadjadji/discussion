@@ -2,39 +2,34 @@
     <head>
         <title>Modifier Profil</title>
         <meta sharset="utf-8">
-        <link rel="stylesheet" href= "">
+        <link rel="stylesheet" href= "profil.css">
         
     </head>
     <body class="bgprofil">
 
    <?php
     session_start();
+    if (isset($_SESSION['login']) && ($_SESSION['login'] == true))
+    {
+    include 'barnavco.php';
+}
+    else
+    {
+        include 'barnav.php';
+    }
+
     $connexion = mysqli_connect("localhost","root","","discussion");
     $requete = "SELECT * FROM utilisateurs WHERE login='".$_SESSION['login']."'";
     $req = mysqli_query($connexion, $requete);
     $data = mysqli_fetch_assoc($req);
+
+   
    ?>
-       <header>
-
-        <style type="text/css">
-        a:link
-        {
-        text-decoration:none;
-        }
-        </style>
-
-        <nav class="nav2">
-
-            <a href="profil.php">Modification</a>
-            <a href="commentaire.php">Discussion</a>
-            <a href="index.php?deconnexion=true">Déconnexion</a>
-
-        </nav>
-      </header>
 
 
 
-                <div id="profilform">
+
+                <div id="formc">
                     <h1>Modifiez votre profil</h1><br>
 
                     <form method="post" action="index.php">
@@ -52,7 +47,6 @@
                     </form><br>
 
                 </div>
-
 
   </body>
 </html>
