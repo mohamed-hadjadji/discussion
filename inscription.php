@@ -1,5 +1,5 @@
 <?php
-session_start();
+    session_start();
 $connexion = mysqli_connect("localhost","root","","discussion");
 
 if (isset($_POST['connexion']))
@@ -42,24 +42,20 @@ if (isset($_POST['connexion']))
     <title>Inscription</title>
 </head>
 <body class="bodyi">
-    <header>
-        <style type="text/css">
-    a:link
+    <?php  
+    if (isset($_SESSION['login']) && ($_SESSION['login'] == true))
     {
-    text-decoration:none;
+    include 'barnavco.php';
+}
+    else
+    {
+        include 'barnav.php';
     }
-    </style>
-            <nav class="nav2">
-
-                <a href="connexion.php"><h3>Connexion</h3></a>
-                <a href="inscription.php"><h3>Inscription</h3></a>
-
-            </nav>
-    </header>
+    ?>
     <div id="formc" >
-        
         <form class="form" method="POST" action=""> 
             <h1>Inscrivez vous pour accéder au salon de discussion</h1>
+        
         
             <label>Login:</label>
             <input type="text" name="login" placeholder="Entrez votre Login"><br/>

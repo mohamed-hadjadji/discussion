@@ -21,7 +21,8 @@
 		<body id="body-index">
 			<h1 id="assasin">Odyssey</h1>
 			<h1 id="odd">Assasin Creed</h1>
-<section id="totalindex">
+<article id="totalindex">
+
 	<article id="premiereindex">
 	 <div class="slider"> 
    <ul id="slider-list"> 
@@ -40,15 +41,15 @@
 	
 <img id="alex" src="Alexios.png">
 <img id="cass" src="kass2.png">
+  <p class="pindex">Inscrivez vous pour recevoir les meilleurs astuces de "ASSASSIN CREED",<br>et rejoindre la "Communauté Spetial Jeux Video! <br>Faites-nous part de vos astuces et  montrez-nous vos videos.
+  Dautre jeux a venir venez nombreux </p>
 </article>
 
 
 
-</section>
+</article>
 
 
-  <p class="pindex">Inscrivez vous pour recevoir les meilleurs astuces de "ASSASSIN CREED",<br>et rejoindre la "Communauté Spetial Jeux Video! <br>Faites-nous part de vos astuces et  montrez-nous vos videos.</p>
-  <p class="pindex">Dautre jeux a venir venez nombreux </p>
 
   <article id="troisindex">
 
@@ -67,7 +68,17 @@
 </div>
     </article>
 
+ <?php
 
+    if(isset($_GET['deconnexion']))
+    {
+     if($_GET['deconnexion']==true)
+       {
+        session_unset();
+        header("location:index.php");
+       }
+    }
+    ?>
 
 	<?php
    if (isset($_SESSION['login'])==false)
@@ -83,17 +94,7 @@
       echo "<h3 id=\"connecte\"><b>Bonjour <u>$user,</u> vous êtes connecté</b></h3>";
     ?>
 
-    <?php
-
-    if(isset($_GET['deconnexion']))
-    {
-     if($_GET['deconnexion']==true)
-       {
-        session_unset();
-        header("location:index.php");
-       }
-    }
-    ?>
+   
     <?php
     }
    ?>

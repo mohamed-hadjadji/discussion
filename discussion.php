@@ -6,26 +6,22 @@
 
 </head>
   <body class="bodyd">
-  	<header>
+     <?php
+     session_start();
+    if (isset ($_SESSION['login']) && !empty($_SESSION['login'])){ 
+    if (isset($_SESSION['login']) && ($_SESSION['login'] == true))
+    {
+      include 'barnavco.php';
+    }
+    else
+    {
+       include 'barnav.php';
+    }
+    ?>
 
-       <style type="text/css">
-      a:link
-      {
-      text-decoration:none;
-      }
-      </style>
-
-      <nav class="nav2">
-
-        <a href="profil.php">Modification</a>
-        <a href="discussion.php">Discussion</a>
-        <a href="index.php?deconnexion=true">Déconnexion</a>
-
-     </nav>
-    </header>
     <section>
- <?php
-session_start();
+
+<?php
 date_default_timezone_set('europe/paris');
 if (isset($_POST['submit']))
 {
@@ -106,3 +102,19 @@ while($row = mysqli_fetch_assoc($req))
     </article>
 
 </body>
+<?php
+}
+else {
+    ?>
+    <body class="style2">
+         <?php
+    echo "<p id=\"pprofil \">Pour acceder a la page il vous faut vous connecter!!</p> ";
+    ?>
+    <form id="profil-deco" action="index.php">
+        <input type="submit" name="bouton">
+    </body>
+       
+<?php
+
+}
+?>

@@ -7,8 +7,10 @@
     </head>
     <body class="bgprofil">
 
-   <?php
-    session_start();
+
+   <?php session_start();
+   if (isset ($_SESSION['login']) && !empty($_SESSION['login'])){
+    
     if (isset($_SESSION['login']) && ($_SESSION['login'] == true))
     {
     include 'barnavco.php';
@@ -17,6 +19,9 @@
     {
         include 'barnav.php';
     }
+
+
+
 
     $connexion = mysqli_connect("localhost","root","","discussion");
     $requete = "SELECT * FROM utilisateurs WHERE login='".$_SESSION['login']."'";
@@ -30,7 +35,7 @@
 
 
                 <div id="formc">
-                    <h1>Modifiez votre profil</h1><br>
+                    <h1 id="animprofil">Modifiez votre profil</h1><br>
 
                     <form method="post" action="index.php">
 
@@ -46,7 +51,25 @@
 
                     </form><br>
 
-                </div>
+             </div>
 
   </body>
+
+<?php
+}
+else {
+    ?>
+    <body>
+         <?php
+    echo "<p id=\"pprofil \">Pour acceder a la page il vous faut vous connecter!!</p> ";
+    ?>
+    <form id="profil-deco" action="index.php">
+        <input type="submit" name="bouton">
+    </body>
+       
+<?php
+
+}
+?>
+
 </html>
