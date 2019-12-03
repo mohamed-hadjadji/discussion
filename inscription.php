@@ -4,6 +4,7 @@ $connexion = mysqli_connect("localhost","root","","discussion");
 
 if (isset($_POST['connexion']))
 {
+        $mdp3= password_hash($_POST["mdp"], PASSWORD_DEFAULT, array('cost' => 12));
     if ($_POST['mdp']==$_POST['mdp2'])
     {
     $requet="SELECT* FROM utilisateurs";
@@ -21,7 +22,7 @@ if (isset($_POST['connexion']))
     if ($trouve==false)
     {
         $sql = "INSERT INTO utilisateurs (login,password)
-                VALUES ('".$_POST['login']."','".$_POST['mdp']."')";
+                VALUES ('".$_POST['login']."','".$mdp3."')";
     $query=mysqli_query($connexion,$sql);
     header('location:connexion.php');
     }

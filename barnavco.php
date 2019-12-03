@@ -5,7 +5,7 @@
                 <nav>
                     <ul id="nav">
                         <li><a href="index.php">Bienvenue</a></li>
-                        <li><a href="connexion.php?deconnexion=true">Déconnexion</a></li>
+                        <li><a href="index.php?deconnexion=true">Déconnexion</a></li>
                         <li><a href="profil.php">Profil</a></li>
                         <li><a href="discussion.php">discussion</a></li>
                     </ul>

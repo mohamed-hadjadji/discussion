@@ -8,9 +8,17 @@
     {
         include 'barnav.php';
     }
+
+
+    if(isset($_GET['deconnexion']))
+    {
+     if($_GET['deconnexion']==true)
+       {
+        session_unset();
+        header("location:index.php");
+       }
+    }
     ?>
-
-
 
     <html>
 <head>
@@ -68,17 +76,7 @@
 </div>
     </article>
 
- <?php
 
-    if(isset($_GET['deconnexion']))
-    {
-     if($_GET['deconnexion']==true)
-       {
-        session_unset();
-        header("location:index.php");
-       }
-    }
-    ?>
 
 	<?php
    if (isset($_SESSION['login'])==false)
@@ -106,7 +104,7 @@
 
 
     $login = $_POST['login'];
-    $passe = $_POST['mdp'];
+    $passe = password_hash($_POST["mdp"], PASSWORD_DEFAULT, array('cost' => 12));
 
     $requete2 = "UPDATE utilisateurs SET login = '$login', password = '$passe' WHERE login = '".$_SESSION['login']."'";
        $query2=mysqli_query($connexion,$requete2);

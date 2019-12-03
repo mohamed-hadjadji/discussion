@@ -23,26 +23,28 @@ if(isset($_POST['login']) && isset($_POST['password']))
     if($login !== "" && $password !== "")
     {
         $requete = "SELECT count(*) FROM utilisateurs where
-              login = '".$login."' and password = '".$password."' ";
-        $query = mysqli_query($connexion,$requete);
-        $reponse = mysqli_fetch_array($query);
+        login = '".$login."' ";
+        $exec_requete = mysqli_query($connexion,$requete);
+        $reponse      = mysqli_fetch_array($exec_requete);
         $count = $reponse['count(*)'];
 
-        if($count!=0 &&$_SESSION['login'] !== "")
-        {
-            
-            $_SESSION['login'] = $_POST['login'];
-            $user = $_SESSION['login'];
-            echo "Bonjour $user, vous êtes connecté";
-            header('Location: index.php');
+        $requete4 = "SELECT * FROM utilisateurs WHERE login='".$login."'";
+        $exec_requete4 = mysqli_query($connexion,$requete4);
+        $reponse4 = mysqli_fetch_array($exec_requete4);
 
+        if( $count!=0 && $_SESSION['login'] == "" && password_verify($password, $reponse4[2]) )
+        {
+
+            $_SESSION['login'] = $login;
+            $user = $_SESSION['login'];
+            header('Location: connexion.php');
         }
-         else
+        else
         {
            header('Location: connexion.php?erreur=1'); // utilisateur ou mot de passe incorrect
         }
 
-    }
+   }
 }
 
 ?>
